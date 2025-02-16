@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import bgImage from "./assets/background.png";
 import "./style/PlayScreen.css";
-import jsonData from './data.json'; 
+import jsonData from './data.json';
  
 
 const PlayScreen = ({ playerName, gameDuration, gameTheme, selectedTheme}) => {
@@ -14,7 +14,9 @@ const PlayScreen = ({ playerName, gameDuration, gameTheme, selectedTheme}) => {
     };
   }, []);
   
-  console.log("Theme = ", selectedTheme);
+  console.log("Clés disponibles :", Object.keys(jsonData));
+console.log("SelectedTheme :", selectedTheme);
+  console.log("ThemeDansPlayScreen = ", selectedTheme);
   const [niveau, setNiveau] = useState(4); 
   const [cards, setCards] = useState(createCards(niveau));
 
@@ -24,18 +26,28 @@ const PlayScreen = ({ playerName, gameDuration, gameTheme, selectedTheme}) => {
       [array[i], array[j]] = [array[j], array[i]]; // Échange des éléments
     }
   }
+
   console.log(jsonData['categories']); 
   function createCards(niveau) {
-    const emojis = jsonData[selectedTheme]; 
+    const category = jsonData.categories.find(cat => cat.name === selectedTheme);
+    if (!category) {
+      console.error("Thème non trouvé :", selectedTheme);
+      return [];
+    }
+  
+    const emojis = category.emoji; // Liste des emojis du thème choisi
     let cards = [];
-
+  
     for (let y = 0; y < niveau; y++) {
+      if (y >= emojis.length) break; // Évite d'accéder à un index hors limite
       cards.push({ id: y * 2, emoji: emojis[y] });
       cards.push({ id: y * 2 + 1, emoji: emojis[y] });
     }
+  
     shuffleArray(cards);
     return cards;
   }
+  
 
   const gridSize = Math.ceil(Math.sqrt(cards.length)); // Calcul des colonnes
 
