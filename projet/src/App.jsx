@@ -7,8 +7,9 @@ function App() {
   const [displayedWindow, setDisplayedWindow] = useState("LaunchWindow");
   const [playerName, setPlayerName] = useState("");
   const [gameDuration, setGameDuration] = useState("");
-  const [gameTheme, setGameTheme] = useState("");
+  const [selectedTheme, setSelectedTheme] = useState("Smileys & Emotion");
   let screen;
+  console.log("Themee = ", selectedTheme);
   switch (displayedWindow) {
     case "LaunchWindow":
       screen = (
@@ -18,13 +19,15 @@ function App() {
           setGameDuration={setGameDuration}
           playerName={playerName}
           gameDuration={gameDuration}
-          gameTheme={gameTheme}
+          selectedTheme={selectedTheme}
+setSelectedTheme={setSelectedTheme}
+
         />
       );
       break;
     case "playScreen":
       screen = (
-        <PlayScreen playerName={playerName} gameDuration={gameDuration} gameTheme={gameTheme}/>
+        <PlayScreen playerName={playerName} gameDuration={gameDuration} selectedTheme={selectedTheme}/>
       );
       break;
     default:
@@ -35,6 +38,7 @@ function App() {
           setGameDuration={setGameDuration}
           playerName={playerName}
           gameDuration={gameDuration}
+          selectedTheme={selectedTheme}
         />
       );
   }

@@ -3,8 +3,8 @@ import SelectThemeList from "./SelectThemeList";
 import bgImage from "./assets/background.png";
 import "./style/LaunchScreen.css";
 
-const LaunchScreen = ({ setDisplayedWindow, setPlayerName, setGameDuration, playerName, gameDuration }) => {
-  const [selectedTheme, setSelectedTheme] = useState("Smileys & Emotion");
+const LaunchScreen = ({ setDisplayedWindow, setPlayerName, setGameDuration, playerName, gameDuration, selectedTheme, setSelectedTheme}) => {
+  
 
   useEffect(() => {
     document.body.style.backgroundImage = `url(${bgImage})`;
@@ -30,7 +30,6 @@ const LaunchScreen = ({ setDisplayedWindow, setPlayerName, setGameDuration, play
       alert("Veuillez entrer un pseudo et une durée valide.");
     }
   };
-
   return (
     <div className="main-container">
       <div id="menu-container">

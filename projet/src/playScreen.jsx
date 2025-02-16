@@ -4,18 +4,18 @@ import "./style/PlayScreen.css";
 import jsonData from './data.json'; 
  
 
-const PlayScreen = ({ playerName, gameDuration, gameTheme }) => {
+const PlayScreen = ({ playerName, gameDuration, gameTheme, selectedTheme}) => {
   useEffect(() => {
     document.body.style.backgroundImage = `url(${bgImage})`;
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
-
     return () => {
       document.body.style.backgroundImage = "";
     };
   }, []);
-
-  const [niveau, setNiveau] = useState(4); // Niveau dynamique
+  
+  console.log("Theme = ", selectedTheme);
+  const [niveau, setNiveau] = useState(4); 
   const [cards, setCards] = useState(createCards(niveau));
 
   function shuffleArray(array) {
@@ -24,9 +24,9 @@ const PlayScreen = ({ playerName, gameDuration, gameTheme }) => {
       [array[i], array[j]] = [array[j], array[i]]; // Échange des éléments
     }
   }
-  console.log(jsonData['Objects']); 
+  console.log(jsonData['categories']); 
   function createCards(niveau) {
-    const emojis = jsonData[gameTheme]; 
+    const emojis = jsonData[selectedTheme]; 
     let cards = [];
 
     for (let y = 0; y < niveau; y++) {
