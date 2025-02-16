@@ -1,0 +1,39 @@
+.TopText {
+    position: absolute;
+    font-size: 2.5  em;
+    top: 10px; /* Ajuste selon ton besoin */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 48px;
+    padding: 0.5em;
+}
+.Cards-Layout {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    margin: auto; /* Centre horizontalement */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre parfaitement */
+  }
+  
+  .Card {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    user-select: none;
+  }
+  

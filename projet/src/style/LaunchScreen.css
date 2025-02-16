@@ -1,0 +1,38 @@
+h1 {
+  font-size: 3em;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  /* Aligner le contenu en haut */
+  text-align: center; 
+  background-color: aliceblue;
+  height: 25em;
+  width: 25em;
+  border-radius: 48px;
+  padding: 2em;
+  gap: 1em;
+}
+
+
+.inputs {
+  border-radius: 48px;
+  text-align: center;
+  width: 20em;
+}
+
+#button-valider {
+  background-color: #a6d9db;
+}
