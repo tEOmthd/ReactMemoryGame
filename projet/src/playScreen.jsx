@@ -14,9 +14,7 @@ const PlayScreen = ({ playerName, gameDuration, gameTheme, selectedTheme}) => {
     };
   }, []);
   
-  console.log("Clés disponibles :", Object.keys(jsonData));
-console.log("SelectedTheme :", selectedTheme);
-  console.log("ThemeDansPlayScreen = ", selectedTheme);
+
   const [niveau, setNiveau] = useState(4); 
   const [cards, setCards] = useState(createCards(niveau));
 
@@ -27,7 +25,6 @@ console.log("SelectedTheme :", selectedTheme);
     }
   }
 
-  console.log(jsonData['categories']); 
   function createCards(niveau) {
     const category = jsonData.categories.find(cat => cat.name === selectedTheme);
     if (!category) {

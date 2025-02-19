@@ -9,7 +9,7 @@ function App() {
   const [gameDuration, setGameDuration] = useState("");
   const [selectedTheme, setSelectedTheme] = useState("Smileys & Emotion");
   let screen;
-  console.log("Themee = ", selectedTheme);
+
   switch (displayedWindow) {
     case "LaunchWindow":
       screen = (
