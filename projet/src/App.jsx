@@ -27,7 +27,12 @@ setSelectedTheme={setSelectedTheme}
       break;
     case "playScreen":
       screen = (
-        <PlayScreen playerName={playerName} gameDuration={gameDuration} selectedTheme={selectedTheme}/>
+        <PlayScreen
+  playerName={playerName}
+  gameDuration={gameDuration}
+  selectedTheme={selectedTheme}
+  setDisplayedWindow={setDisplayedWindow} 
+/>
       );
       break;
     default:

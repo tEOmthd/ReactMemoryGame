@@ -13,23 +13,18 @@ const Timer = ({ initialTime, onTimeUp, isLevelComplete }) => {
       setIsPaused(false);
     }
   }, [isLevelComplete]);
-
-  // Reset le timer quand initialTime change (nouveau niveau)
   useEffect(() => {
     setTimeLeft(initialTime);
     setIsPaused(false);
   }, [initialTime]);
 
-  // Compte à rebours
   useEffect(() => {
-    // Ne décrémente pas si le timer est en pause
     if (isPaused) return;
 
     const timer = timeLeft > 0 && setInterval(() => {
       setTimeLeft(prevTime => prevTime - 1);
     }, 1000);
 
-    // Si le temps est écoulé, appeler onTimeUp
     if (timeLeft === 0 && onTimeUp) {
       onTimeUp();
     }
@@ -37,7 +32,6 @@ const Timer = ({ initialTime, onTimeUp, isLevelComplete }) => {
     return () => clearInterval(timer);
   }, [timeLeft, isPaused, onTimeUp]);
 
-  // Formatage du temps (mm:ss)
   const formatTime = () => {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
