@@ -20,19 +20,18 @@ function App() {
           playerName={playerName}
           gameDuration={gameDuration}
           selectedTheme={selectedTheme}
-setSelectedTheme={setSelectedTheme}
-
+          setSelectedTheme={setSelectedTheme}
         />
       );
       break;
     case "playScreen":
       screen = (
         <PlayScreen
-  playerName={playerName}
-  gameDuration={gameDuration}
-  selectedTheme={selectedTheme}
-  setDisplayedWindow={setDisplayedWindow} 
-/>
+          playerName={playerName}
+          gameDuration={gameDuration}
+          selectedTheme={selectedTheme}
+          setDisplayedWindow={setDisplayedWindow}
+        />
       );
       break;
     default:

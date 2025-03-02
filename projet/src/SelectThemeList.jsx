@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./style/SelectThemeList.css";
-import "./LaunchScreen.jsx"
+import "./LaunchScreen.jsx";
 
 const themes = [
   "Smileys & Emotion",
@@ -16,7 +16,10 @@ const themes = [
 const SelectThemeList = ({ selectedTheme, setSelectedTheme }) => {
   return (
     <div className="theme-select">
-      <select value={selectedTheme} onChange={(e) => setSelectedTheme(e.target.value)}>
+      <select
+        value={selectedTheme}
+        onChange={(e) => setSelectedTheme(e.target.value)}
+      >
         {themes.map((theme, index) => (
           <option key={index} value={theme}>
             {theme}

@@ -54,8 +54,9 @@ const PlayScreen = ({
     const nombresDePaires = niveauActuel + 3;
     const emojisDisponibles = theme.emoji;
 
-    const emojisPourNiveau = Array.from({ length: nombresDePaires }, (_, i) => 
-      emojisDisponibles[i % emojisDisponibles.length]
+    const emojisPourNiveau = Array.from(
+      { length: nombresDePaires },
+      (_, i) => emojisDisponibles[i % emojisDisponibles.length]
     );
 
     return shuffleArray(
@@ -91,7 +92,7 @@ const PlayScreen = ({
   const terminerNiveau = () => {
     setIsLevelComplete(true);
     setScore((prev) => prev + niveau * 100);
-    
+
     setTimeout(() => {
       setNiveau((prev) => prev + 1);
       setIsLevelComplete(false);
@@ -110,7 +111,9 @@ const PlayScreen = ({
 
   return (
     <div className="play-screen-container">
-      <h1 className="TopText">{playerName}, Niveau {niveau}</h1>
+      <h1 className="TopText">
+        {playerName}, Niveau {niveau}
+      </h1>
       <div className="score-display">Score: {score}</div>
 
       <Timer
@@ -136,16 +139,21 @@ const PlayScreen = ({
         </div>
       )}
 
-      <div 
+      <div
         className="Cards-Layout"
-        style={{ gridTemplateColumns: `repeat(${Math.ceil(Math.sqrt(cards.length))}, 1fr)` }}
+        style={{
+          gridTemplateColumns: `repeat(${Math.ceil(
+            Math.sqrt(cards.length)
+          )}, 1fr)`,
+        }}
       >
         {cards.map((card) => (
           <div
             key={card.id}
             className={`Card ${
-              flippedCards.includes(card.id) || matchedPairs.flat().includes(card.id) 
-                ? "flipped" 
+              flippedCards.includes(card.id) ||
+              matchedPairs.flat().includes(card.id)
+                ? "flipped"
                 : ""
             }`}
             onClick={() => handleCardClick(card.id)}

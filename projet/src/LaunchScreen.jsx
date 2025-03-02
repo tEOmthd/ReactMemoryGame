@@ -10,20 +10,18 @@ const LaunchScreen = ({
   playerName,
   gameDuration,
   selectedTheme,
-  setSelectedTheme
+  setSelectedTheme,
 }) => {
-  // Configuration de l'arrière-plan au montage du composant
   useEffect(() => {
     // Applique l'image de fond
     document.body.style.backgroundImage = `url(${bgImage})`;
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
 
-    // Nettoyage lors du démontage
     return () => {
       document.body.style.backgroundImage = "";
     };
-  }, []); // Exécuté une seule fois au montage
+  }, []);
 
   // Gestion du changement de durée de jeu
   const handleDurationChange = (e) => {
@@ -61,7 +59,6 @@ const LaunchScreen = ({
           aria-label="Entrez votre pseudo"
         />
 
-     
         <input
           value={gameDuration}
           onChange={handleDurationChange}
@@ -73,13 +70,13 @@ const LaunchScreen = ({
           aria-label="Durée de la partie en secondes"
         />
 
-        <SelectThemeList 
-          selectedTheme={selectedTheme} 
-          setSelectedTheme={setSelectedTheme} 
+        <SelectThemeList
+          selectedTheme={selectedTheme}
+          setSelectedTheme={setSelectedTheme}
         />
 
-        <button 
-          id="button-valider" 
+        <button
+          id="button-valider"
           onClick={handleValider}
           aria-label="Démarrer la partie"
         >

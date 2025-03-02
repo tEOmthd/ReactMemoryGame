@@ -26,13 +26,13 @@ const Timer = ({ initialTime, onTimeUp, isLevelComplete }) => {
     const intervalId = setInterval(() => {
       setTimeLeft((prev) => {
         const newTime = prev - 1;
-        
+
         // Déclencher l'événement de fin de temps
         if (newTime === 0) {
           if (onTimeUp) onTimeUp();
           clearInterval(intervalId);
         }
-        
+
         return newTime;
       });
     }, 1000);
@@ -45,7 +45,9 @@ const Timer = ({ initialTime, onTimeUp, isLevelComplete }) => {
   const formatTime = () => {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
-    return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+    return `${minutes.toString().padStart(2, "0")}:${seconds
+      .toString()
+      .padStart(2, "0")}`;
   };
 
   return (

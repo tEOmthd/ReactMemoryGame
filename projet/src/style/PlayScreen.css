@@ -3,7 +3,8 @@
 .TopText {
   position: absolute;
   font-size: 2.5em;
-  top: 10px; /* Ajuste selon ton besoin */
+  top: 10px;
+  /* Ajuste selon ton besoin */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -19,11 +20,13 @@
   align-items: center;
   gap: 10px;
   width: fit-content;
-  margin: auto; /* Centre horizontalement */
+  margin: auto;
+  /* Centre horizontalement */
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centre parfaitement */
+  transform: translate(-50%, -50%);
+  /* Centre parfaitement */
 }
 
 .Card {
@@ -32,7 +35,8 @@
   perspective: 1000px;
   cursor: pointer;
   user-select: none;
-  margin: 0; /* Reset margin from previous CSS */
+  margin: 0;
+  /* Reset margin from previous CSS */
 }
 
 .card-inner {
@@ -50,7 +54,8 @@
   transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -92,8 +97,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 
@@ -103,11 +113,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+  background: rgba(0, 0, 0, 0.7);
+  /* Fond semi-transparent */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* S'assure que c'est au-dessus du reste */
+  z-index: 1000;
+  /* S'assure que c'est au-dessus du reste */
 }
 
 .game-over-message {
