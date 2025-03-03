@@ -15,10 +15,10 @@ function App() {
       screen = (
         <LaunchScreen
           setDisplayedWindow={setDisplayedWindow}
-          setPlayerName={setPlayerName}
+          gameDuration={gameDuration}
           setGameDuration={setGameDuration}
           playerName={playerName}
-          gameDuration={gameDuration}
+          setPlayerName={setPlayerName}
           selectedTheme={selectedTheme}
           setSelectedTheme={setSelectedTheme}
         />
