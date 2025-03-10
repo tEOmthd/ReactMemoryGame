@@ -1,8 +1,51 @@
-# React + Vite
+# Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive Memory Game developed in React.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+## Installation
+
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/your-username/memory-game.git
+   ```
+2. Navigate to the project folder:
+   ```sh
+   cd memory-game
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+## Running the Project
+
+Start the application in development mode:
+```sh
+npm start
+```
+
+Then, open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
+## Features
+
+- Memory game with randomized cards
+- Smooth card animations
+- Move counter and win detection
+- Responsive design
+
+## Technologies Used
+
+- React.js
+- CSS (or Tailwind, depending on the project)
+- State management with useState and useEffect
+
+## Future Improvements
+
+- Adding a multiplayer mode
+- Improved animations and sound effects
+- Local score saving
