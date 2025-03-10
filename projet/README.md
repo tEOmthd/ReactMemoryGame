@@ -11,7 +11,7 @@ A simple and interactive Memory Game developed in React.
 
 1. Clone this repository:
    ```sh
-   git clone https://github.com/your-username/memory-game.git
+   git clone https://github.com/tEOmthd/ReactMemoryGame.git
    ```
 2. Navigate to the project folder:
    ```sh
