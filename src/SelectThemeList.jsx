@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./style/SelectThemeList.css";
-import "./LaunchScreen.jsx";
 
 const themes = [
   "Smileys & Emotion",

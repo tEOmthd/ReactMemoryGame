@@ -41,10 +41,17 @@ const PlayScreen = ({
     if (cards.length > 0 && matchedPairs.length === cards.length / 2) {
       terminerNiveau();
     }
-  }, [matchedPairs]);
+  }, [matchedPairs, cards]);
 
-  // Mélange des cartes
-  const shuffleArray = (array) => [...array].sort(() => Math.random() - 0.5);
+  // Mélange des cartes (Fisher-Yates — non biaisé)
+  const shuffleArray = (array) => {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
 
   // Création des paires de cartes
   const createCards = (niveauActuel) => {

@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./style/Timer.css";
 
-const Timer = ({ initialTime, onTimeUp, isLevelComplete }) => {
+const Timer = ({ initialTime, onTimeUp, isPaused }) => {
   // États du timer
   const [timeLeft, setTimeLeft] = useState(initialTime);
-  const [isPaused, setIsPaused] = useState(false);
-
-  // Gère la pause du timer pendant les transitions de niveau
-  useEffect(() => {
-    setIsPaused(isLevelComplete);
-  }, [isLevelComplete]);
 
   // Réinitialise le timer quand la durée initiale change
   useEffect(() => {
     setTimeLeft(initialTime);
-    setIsPaused(false);
   }, [initialTime]);
 
   // Logique principale du compte à rebours

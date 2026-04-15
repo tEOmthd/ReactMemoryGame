@@ -1,51 +1,29 @@
-# Memory Game
+# React Memory Game
 
-A simple and interactive Memory Game developed in React.
+Jeu de mémoire multi-niveaux développé en React 18 avec Vite. Le joueur retourne des paires de cartes emoji, progresse de niveau en niveau et doit tout trouver avant la fin du timer.
 
-## Prerequisites
+## Stack technique
 
-- Node.js (v16 or higher recommended)
-- npm or yarn
+- React 18
+- Vite
+- JavaScript
+- CSS (animations 3D natives)
 
 ## Installation
 
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/tEOmthd/ReactMemoryGame.git
-   ```
-2. Navigate to the project folder:
-   ```sh
-   cd memory-game
-   ```
-3. Install dependencies:
-   ```sh
-   npm install
-   ```
-
-## Running the Project
-
-Start the application in development mode:
-```sh
-npm start
+```bash
+npm install
+npm run dev
 ```
 
-Then, open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+## Fonctionnalités
 
-## Features
+- 8 thèmes d'emojis au choix (Smileys, Animaux, Nourriture, Voyages, Objets, Sports, Symboles, Science & Tech)
+- Progression de niveaux : le nombre de paires augmente à chaque niveau
+- Timer configurable avant le lancement de la partie
+- Animations CSS 3D pour le retournement des cartes
+- Score cumulé en fonction du niveau atteint
 
-- Memory game with randomized cards
-- Smooth card animations
-- Move counter and win detection
-- Responsive design
+## Contexte
 
-## Technologies Used
-
-- React.js
-- CSS (or Tailwind, depending on the project)
-- State management with useState and useEffect
-
-## Future Improvements
-
-- Adding a multiplayer mode
-- Improved animations and sound effects
-- Local score saving
+Projet universitaire — IUT, module R4.A.10.
